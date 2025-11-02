@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Proposals</title>
@@ -10,8 +9,6 @@
           integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer">
-
-
 
     <style>
         body {
@@ -29,44 +26,130 @@
             text-align: center;
         }
 
-            header h1 {
-                margin: 0;
-                font-size: 2.5rem;
-                color: #2d6a4f;
-            }
-
-        nav {
-            background-color: #dcedc8;
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #2d6a4f;
         }
 
-            nav a {
-                text-decoration: none;
-                color: #2d6a4f;
-                font-weight: bold;
-            }
+        header p {
+            margin: 0.5rem 0 0 0;
+            font-weight: bold;
+        }
 
         main {
             padding: 2rem;
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
         }
 
-        article {
-            margin-bottom: 2rem;
+        .project-section {
+            margin-bottom: 3rem;
             background-color: #e8f5e9;
             padding: 1.5rem;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-            article h2 {
-                margin-top: 1,5rem;
-                color: #388e3c;
-            }
+        .project-section h2 {
+            margin-top: 0;
+            color: #388e3c;
+            font-size: 1.8rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .project-button {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .project-button:hover {
+            background-color: #1b5e20;
+        }
+
+        .project-button.active {
+            background-color: #388e3c;
+        }
+
+        .content-section {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 8px;
+            line-height: 1.8;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .content-section h3 {
+            color: #2d6a4f;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .simple-form {
+            margin: 1rem 0;
+        }
+
+        .simple-input {
+            padding: 0.5rem;
+            border: 2px solid #c8e6c9;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .simple-button {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .simple-button:hover {
+            background-color: #1b5e20;
+        }
+
+        .result-display {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f1f8f4;
+            border-radius: 5px;
+            border-left: 4px solid #2d6a4f;
+        }
+
+        .item-list {
+            margin-top: 1rem;
+        }
+
+        .list-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background-color: #f1f8f4;
+            border-radius: 5px;
+            border-left: 3px solid #388e3c;
+        }
 
         .github-button-container {
             text-align: center;
@@ -86,9 +169,9 @@
             transition: background-color 0.3s ease;
         }
 
-            .github-button:hover {
-                background-color: #1b5e20;
-            }
+        .github-button:hover {
+            background-color: #1b5e20;
+        }
 
         footer {
             text-align: center;
@@ -97,70 +180,170 @@
             color: #2d6a4f;
         }
 
-    </style>
+        @media (max-width: 768px) {
+            .button-group {
+                flex-direction: column;
+            }
 
+            .project-button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-   
     <header>
         <h1>Welcome tot mijn pagina</h1>
-        <p><b>Hier kunt u mijn proposals bekijken </b></p>
+        <p><b>Hier kunt u mijn proposals bekijken</b></p>
     </header>
 
     <main>
-        
-            
-        <article>
-            <h2>Fitness app</h2>
-            <p>
-                Ik wil een fitness-app maken waarmee je al je trainingen kunt bijhouden en ervoor kunt zorgen dat je elke training je grenzen verlegt, zodat je elke keer een beetje beter wordt. Ik wil ook de mogelijkheid toevoegen om een dagboek bij te houden van je dieet en voeding, zodat je zeker weet dat je goed en gezond eet en ook je waterinname bijhoudt, een dagboek in de app om te noteren hoe de dag is verlopen (bijvoorbeeld een stressvolle dag, een gezellige dag met familie of vrienden), een slaaptracker om te controleren of je goed hebt geslapen, enzovoort.
-            </p>
+        <!-- Fitness App -->
+        <div class="project-section">
+            <h2>Fitness App</h2>
+            <div class="button-group">
+                <button class="project-button active" onclick="showContent('fitness', 'info')">Info</button>
+                <button class="project-button" onclick="showContent('fitness', 'features')">Inhoud</button>
+                <button class="project-button" onclick="showContent('fitness', 'demo')">Functies</button>
+            </div>
 
-            <h2>Inhoud</h2>
-            <p>
-                Het belangrijkste idee achter dit concept is om je trainingen geleidelijk te verzwaren, zodat je elke training een klein beetje meer gewicht of herhalingen toevoegt.
-                Hierdoor kan je lichaam elke week bijvoorbeeld iets meer spierweefsel afbreken, wat leidt tot spiergroei. Dit is erg belangrijk om te doen en het is onmogelijk om al je gewichten uit je hoofd te onthouden. Deze applicatie maakt het een stuk gemakkelijker.
+            <div id="fitness-info" class="content-section active">
+                <h3>Over de Fitness App</h3>
+                <p>
+                    Ik wil een fitness-app maken waarmee je al je trainingen kunt bijhouden en ervoor kunt zorgen dat je elke training je grenzen verlegt, zodat je elke keer een beetje beter wordt. Ik wil ook de mogelijkheid toevoegen om een dagboek bij te houden van je dieet en voeding, zodat je zeker weet dat je goed en gezond eet en ook je waterinname bijhoudt, een dagboek in de app om te noteren hoe de dag is verlopen (bijvoorbeeld een stressvolle dag, een gezellige dag met familie of vrienden), een slaaptracker om te controleren of je goed hebt geslapen, enzovoort.
+                </p>
+            </div>
 
-                Een ander idee dat bij me opkwam, is om een voedingsdagboek bij te houden, waarin je alle voedingsstoffen noteert die je die dag hebt gegeten. De app toont een doel dat je moet halen, bijvoorbeeld 170 gram eiwit voor een man van 85 kilogram, wat de basishoeveelheid is die je moet halen om spieren op te bouwen.
-                De andere macro's, zoals koolhydraten en vetten, worden ook getoond, maar deze verschillen van persoon tot persoon, omdat sommige mensen graag vette maaltijden eten en andere mensen graag meer vullende koolhydraatrijke maaltijden eten, zoals gebakken of gekookte aardappelen/rijst enz.
-                Het berekent ook je dagelijkse waterbehoefte, die je in de applicatie kunt invoeren om te zien of je genoeg water hebt gedronken voor die dag.
+            <div id="fitness-features" class="content-section">
+                <h3>Inhoud</h3>
+                <p>
+                    Het belangrijkste idee achter dit concept is om je trainingen geleidelijk te verzwaren, zodat je elke training een klein beetje meer gewicht of herhalingen toevoegt.
+                    Hierdoor kan je lichaam elke week bijvoorbeeld iets meer spierweefsel afbreken, wat leidt tot spiergroei. Dit is erg belangrijk om te doen en het is onmogelijk om al je gewichten uit je hoofd te onthouden. Deze applicatie maakt het een stuk gemakkelijker.
+                </p>
+                <p>
+                    Een ander idee dat bij me opkwam, is om een voedingsdagboek bij te houden, waarin je alle voedingsstoffen noteert die je die dag hebt gegeten. De app toont een doel dat je moet halen, bijvoorbeeld 170 gram eiwit voor een man van 85 kilogram, wat de basishoeveelheid is die je moet halen om spieren op te bouwen.
+                    De andere macro's, zoals koolhydraten en vetten, worden ook getoond, maar deze verschillen van persoon tot persoon, omdat sommige mensen graag vette maaltijden eten en andere mensen graag meer vullende koolhydraatrijke maaltijden eten, zoals gebakken of gekookte aardappelen/rijst enz.
+                    Het berekent ook je dagelijkse waterbehoefte, die je in de applicatie kunt invoeren om te zien of je genoeg water hebt gedronken voor die dag.
+                </p>
+                <p>
+                    Het volgende idee dat ik had, was een dagboekachtig logboek waarin de gebruiker zijn dag kan delen. Dit wordt uitgetypt. De reden dat ik dit idee had, is omdat we mensen zijn en soms willen genieten van een gezellig familiediner dat kan dan worden vastgelegd, zodat we, als we (een beetje) te veel eten, kunnen terugkijken naar wat de reden daarvoor zou kunnen zijn, of als we een zeer succesvolle dag hebben gehad, kan dit de gebruiker misschien inspireren om zo door te gaan en gemotiveerd te blijven.
+                </p>
+                <p>
+                    Daarnaast zou er een slaaptracker zijn, want om af te vallen of spieren op te bouwen is het erg belangrijk om je slaapdoel te halen. Je kunt in de app invoeren hoeveel uur je slaapt en dan krijg je een groen vinkje om de gebruiker op de een of andere manier tevreden te stellen. Als we niet genoeg slapen, krijg je een rood kruisje en ook een herinnering om voldoende te slapen.
+                </p>
+                <p>
+                    Extra ideeën: streak-systeem, donkere/lichte modus, gebruiksvriendelijk dashboard, enz.
+                </p>
+            </div>
 
-                Het volgende idee dat ik had, was een dagboekachtig logboek waarin de gebruiker zijn dag kan delen. Dit wordt uitgetypt. De reden dat ik dit idee had, is omdat we mensen zijn en soms willen genieten van een gezellig familiediner dat kan dan worden vastgelegd, zodat we, als we (een beetje) te veel eten, kunnen terugkijken naar wat de reden daarvoor zou kunnen zijn, of als we een zeer succesvolle dag hebben gehad, kan dit de gebruiker misschien inspireren om zo door te gaan en gemotiveerd te blijven.
+            <div id="fitness-demo" class="content-section">
+                <h3>Calorie Tracker</h3>
+                <div class="simple-form">
+                    <input type="number" class="simple-input" id="fitness-calorie-input" placeholder="Aantal calorieën">
+                    <button class="simple-button" onclick="addCalorie()">Toevoegen</button>
+                </div>
+                <div class="result-display">
+                    <strong>Totaal calorieën vandaag: <span id="fitness-calorie-total">0</span> kcal</strong>
+                </div>
 
-                Daarnaast zou er een slaaptracker zijn, want om af te vallen of spieren op te bouwen is het erg belangrijk om je slaapdoel te halen. Je kunt in de app invoeren hoeveel uur je slaapt en dan krijg je een groen vinkje om de gebruiker op de een of andere manier tevreden te stellen. Als we niet genoeg slapen, krijg je een rood kruisje en ook een herinnering om voldoende te slapen.
+                <h3 style="margin-top: 2rem;">Water Tracker</h3>
+                <div class="simple-form">
+                    <input type="number" class="simple-input" id="fitness-water-input" placeholder="Glazen water (250ml per glas)">
+                    <button class="simple-button" onclick="addWater()">Toevoegen</button>
+                </div>
+                <div class="result-display">
+                    <strong>Totaal water vandaag: <span id="fitness-water-total">0</span> ml</strong>
+                </div>
+            </div>
+        </div>
 
-                Extra ideeën: streak-systeem, donkere/lichte modus, gebruiksvriendelijk dashboard, enz.
+        <!-- Finance App -->
+        <div class="project-section">
+            <h2>Finance App</h2>
+            <div class="button-group">
+                <button class="project-button active" onclick="showContent('finance', 'info')">Info</button>
+                <button class="project-button" onclick="showContent('finance', 'features')">Inhoud</button>
+                <button class="project-button" onclick="showContent('finance', 'demo')">Functies</button>
+            </div>
 
-            <h2>Finance app</h2>
-            <p>
-                Ik wil een financiële app maken die je helpt je financiën bij te houden en ervoor zorgt dat je niet meer uitgeeft dan je verdient. De app zal ook een budgetplanner bevatten, zodat je kunt zien hoeveel geld je elke maand overhoudt nadat je al je vaste lasten hebt betaald. De app zal ook een spaarplan bevatten, zodat je kunt zien hoeveel geld je elke maand opzij kunt zetten voor toekomstige uitgaven of noodgevallen.
-            </p>
+            <div id="finance-info" class="content-section active">
+                <h3>Over de Finance App</h3>
+                <p>
+                    Ik wil een financiële app maken die je helpt je financiën bij te houden en ervoor zorgt dat je niet meer uitgeeft dan je verdient. De app zal ook een budgetplanner bevatten, zodat je kunt zien hoeveel geld je elke maand overhoudt nadat je al je vaste lasten hebt betaald. De app zal ook een spaarplan bevatten, zodat je kunt zien hoeveel geld je elke maand opzij kunt zetten voor toekomstige uitgaven of noodgevallen.
+                </p>
+            </div>
 
-            <h2>Inhoud</h2>
-            <p>
-                Het tweede idee dat ik zou willen uitvoeren, is een persoonlijke financiële tracker waarmee je gemakkelijk uitgaven kunt bijhouden, spaargeld kunt plannen en uitgavenpatronen kunt visualiseren. De reden voor dit idee is dat mijn ouders een behoorlijk bedrag verdienen en altijd zonder geld zitten zonder te weten waar het geld naartoe is gegaan. Dit deed me beseffen dat er een eenvoudige oplossing voor zou zijn.
-                Dit is voor iedereen nodig in de tijd waarin we leven, omdat de meeste mensen ongeveer het gemiddelde loon verdienen en niet weten waar hun geld naartoe gaat. Deze app maakt een visualisatie van de verschillende categorieën uitgaven die we hebben. Zoals primaire uitgaven, huur, eten en drinken, ... Geld dat wordt uitgegeven aan bijvoorbeeld leningen, autoverzekeringen, enzovoort. Dit stelt een budget vast, laat geld over om te sparen of te investeren en maakt de gebruiker bewust van wat hij uitgeeft en dat hij nog wat speelruimte over heeft.
-                Enkele functies die ik zou willen toevoegen zijn het toevoegen van dagelijkse uitgaven zoals categorie, bedrag, ... Een maandelijks overzicht in een cirkeldiagram (voeding, huur, vrije tijd, ...) Spaar doelen instellen (bijv. “€ 500 tegen volgende maand” of 5000 voor vakanties). Automatische waarschuwingen bij overschrijding van het budget, een dashboard met de verhouding tussen “behoeften en wensen”. Voorspellende inzichten (gemiddelde wekelijkse uitgaven). API voor valutaconversie voor reizen. Ondersteuning voor meerdere gebruikers voor huishoudbudgettering.
-                Dit zou door een heel huishouden worden gebruikt. Het maakt het gemakkelijk om de huur of boodschappen te verdelen. Er zou bijvoorbeeld een mogelijkheid zijn om samen te sparen voor een vakantie.
+            <div id="finance-features" class="content-section">
+                <h3>Inhoud</h3>
+                <p>
+                    Het tweede idee dat ik zou willen uitvoeren, is een persoonlijke financiële tracker waarmee je gemakkelijk uitgaven kunt bijhouden, spaargeld kunt plannen en uitgavenpatronen kunt visualiseren. De reden voor dit idee is dat mijn ouders een behoorlijk bedrag verdienen en altijd zonder geld zitten zonder te weten waar het geld naartoe is gegaan. Dit deed me beseffen dat er een eenvoudige oplossing voor zou zijn.
+                </p>
+                <p>
+                    Dit is voor iedereen nodig in de tijd waarin we leven, omdat de meeste mensen ongeveer het gemiddelde loon verdienen en niet weten waar hun geld naartoe gaat. Deze app maakt een visualisatie van de verschillende categorieën uitgaven die we hebben. Zoals primaire uitgaven, huur, eten en drinken, ... Geld dat wordt uitgegeven aan bijvoorbeeld leningen, autoverzekeringen, enzovoort. Dit stelt een budget vast, laat geld over om te sparen of te investeren en maakt de gebruiker bewust van wat hij uitgeeft en dat hij nog wat speelruimte over heeft.
+                </p>
+                <p>
+                    Enkele functies die ik zou willen toevoegen zijn het toevoegen van dagelijkse uitgaven zoals categorie, bedrag, ... Een maandelijks overzicht in een cirkeldiagram (voeding, huur, vrije tijd, ...) Spaar doelen instellen (bijv. "€ 500 tegen volgende maand" of 5000 voor vakanties). Automatische waarschuwingen bij overschrijding van het budget, een dashboard met de verhouding tussen "behoeften en wensen". Voorspellende inzichten (gemiddelde wekelijkse uitgaven). API voor valutaconversie voor reizen. Ondersteuning voor meerdere gebruikers voor huishoudbudgettering.
+                </p>
+                <p>
+                    Dit zou door een heel huishouden worden gebruikt. Het maakt het gemakkelijk om de huur of boodschappen te verdelen. Er zou bijvoorbeeld een mogelijkheid zijn om samen te sparen voor een vakantie.
+                </p>
+            </div>
 
-             </p>
+            <div id="finance-demo" class="content-section">
+                <h3>Budget Tracker</h3>
+                <div class="simple-form">
+                    <input type="text" class="simple-input" id="finance-name-input" placeholder="Beschrijving">
+                    <input type="number" class="simple-input" id="finance-amount-input" placeholder="Bedrag (€)">
+                    <select class="simple-input" id="finance-type-input">
+                        <option value="expense">Uitgave</option>
+                        <option value="income">Inkomst</option>
+                    </select>
+                    <button class="simple-button" onclick="addTransaction()">Toevoegen</button>
+                </div>
+                <div class="result-display">
+                    <strong>Saldo: <span id="finance-balance">€0</span></strong>
+                </div>
+                <div class="item-list" id="finance-list"></div>
+            </div>
+        </div>
 
-            <h2>Habit/productivity app </h2>
-            <p>
-                Ik wil een routine/productiviteit app maken die je helpt om consistent je routine uit te kunnen voeren. Uw productiviteit te verhougen, en slechte gewoontes af te leren
-            </p>
-            <h2>Inhoud</h2>
-            <p>
-                Gewoonte- en productiviteitstracker
-                Ik had een idee voor een alles-in-één gewoonte-tracker en productiviteitsdashboard dat dagelijkse discipline beloont. Dit idee voor een applicatie zorgt ervoor dat de gebruiker goede gewoontes aanleert en slechte gewoontes afleert. Het heeft een dagelijks controlesysteem dat de gebruiker herinnert aan zijn/haar doelen. Het kan worden gebruikt voor school, werk en persoonlijke gewoontes. Het heeft ook een visualisatie van de voortgang, wat de gebruiker helpt bij het volhouden van zijn gewoontes. Reflectieve notities voor elke dag, waarom de gewoonte mislukte of slaagde. Een voortgangspercentage voor elke gewoonte, motiverende berichten, enzovoort. Dit helpt de gebruiker om productiever te zijn met zijn/haar dag. Het zou worden gebruikt voor tijdbeheer. Er zouden verschillende prioriteiten zijn voor de taken, en als een taak een lagere prioriteit heeft, zou deze naar de volgende dag kunnen worden verplaatst.
-                Enkele functionaliteiten die ik graag zou willen hebben, zijn het aanmaken van gewoontes: bv. “Drink 2 liter water”; “Lees 20 minuten”,... Dagelijkse tracker: selectievakje om voltooiing te kunnen markeren. Een streak-visualisatie: om consistentie te kunnen bekijken, visuele kalender met vinkjes of kruisjes. Reflectieve notities, om uit te leggen waarom een gewoonte elke dag is geslaagd of mislukt. Een voortgangspercentage: algemene voltooiingsscore per gewoonte. Motiverende citaten of aangepaste herinneringen. Categorie-tags (gezondheid, studie, sociaal, enz.). Een donkere/lichte modus.
+        <!-- Habit App -->
+        <div class="project-section">
+            <h2>Habit/Productivity App</h2>
+            <div class="button-group">
+                <button class="project-button active" onclick="showContent('habit', 'info')">Info</button>
+                <button class="project-button" onclick="showContent('habit', 'features')">Inhoud</button>
+                <button class="project-button" onclick="showContent('habit', 'demo')">Functies</button>
+            </div>
 
+            <div id="habit-info" class="content-section active">
+                <h3>Over de Habit/Productivity App</h3>
+                <p>
+                    Ik wil een routine/productiviteit app maken die je helpt om consistent je routine uit te kunnen voeren. Uw productiviteit te verhouden, en slechte gewoontes af te leren.
+                </p>
+            </div>
 
-            </p>
+            <div id="habit-features" class="content-section">
+                <h3>Inhoud</h3>
+                <p>
+                    Gewoonte- en productiviteitstracker
+                    Ik had een idee voor een alles-in-één gewoonte-tracker en productiviteitsdashboard dat dagelijkse discipline beloont. Dit idee voor een applicatie zorgt ervoor dat de gebruiker goede gewoontes aanleert en slechte gewoontes afleert. Het heeft een dagelijks controlesysteem dat de gebruiker herinnert aan zijn/haar doelen. Het kan worden gebruikt voor school, werk en persoonlijke gewoontes. Het heeft ook een visualisatie van de voortgang, wat de gebruiker helpt bij het volhouden van zijn gewoontes. Reflectieve notities voor elke dag, waarom de gewoonte mislukte of slaagde. Een voortgangspercentage voor elke gewoonte, motiverende berichten, enzovoort. Dit helpt de gebruiker om productiever te zijn met zijn/haar dag. Het zou worden gebruikt voor tijdbeheer. Er zouden verschillende prioriteiten zijn voor de taken, en als een taak een lagere prioriteit heeft, zou deze naar de volgende dag kunnen worden verplaatst.
+                </p>
+                <p>
+                    Enkele functionaliteiten die ik graag zou willen hebben, zijn het aanmaken van gewoontes: bv. "Drink 2 liter water"; "Lees 20 minuten",... Dagelijkse tracker: selectievakje om voltooiing te kunnen markeren. Een streak-visualisatie: om consistentie te kunnen bekijken, visuele kalender met vinkjes of kruisjes. Reflectieve notities, om uit te leggen waarom een gewoonte elke dag is geslaagd of mislukt. Een voortgangspercentage: algemene voltooiingsscore per gewoonte. Motiverende citaten of aangepaste herinneringen. Categorie-tags (gezondheid, studie, sociaal, enz.). Een donkere/lichte modus.
+                </p>
+            </div>
 
-        </article>
-</main>
-    
+            <div id="habit-demo" class="content-section">
+                <h3>Habit Tracker</h3>
+                <div class="simple-form">
+                    <input type="text" class="simple-input" id="habit-name-input" placeholder="Nieuwe gewoonte (bijv. Drink 2L water)">
+                    <button class="simple-button" onclick="addHabit()">Toevoegen</button>
+                </div>
+                <div class="item-list" id="habit-list"></div>
+            </div>
+        </div>
+    </main>
 
     <div class="github-button-container">
         <a href="https://github.com/seyithalat/WebFundamentalsProject" class="github-button" target="_blank">
@@ -168,5 +351,148 @@
         </a>
     </div>
 
+    <footer>
+        <p>&copy; 2025 Seyit Halat</p>
+    </footer>
+
+    <script>
+        // Show content based on button click
+        function showContent(project, section) {
+            // Hide all content sections for this project
+            document.querySelectorAll(`[id^="${project}-"]`).forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons in this project
+            event.target.parentElement.querySelectorAll('.project-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected content and activate button
+            document.getElementById(`${project}-${section}`).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Fitness App Functions
+        let totalCalories = 2350;
+        let totalWater = 1750;
+
+        function addCalorie() {
+            const input = document.getElementById('fitness-calorie-input');
+            const calories = parseInt(input.value) || 0;
+            if (calories > 0) {
+                totalCalories += calories;
+                document.getElementById('fitness-calorie-total').textContent = totalCalories;
+                input.value = '';
+            }
+        }
+
+        function addWater() {
+            const input = document.getElementById('fitness-water-input');
+            const glasses = parseInt(input.value) || 0;
+            if (glasses > 0) {
+                totalWater += glasses * 250;
+                document.getElementById('fitness-water-total').textContent = totalWater;
+                input.value = '';
+            }
+        }
+
+        // Finance App Functions
+        let transactions = [];
+        let balance = 0;
+
+        function addTransaction() {
+            const name = document.getElementById('finance-name-input').value;
+            const amount = parseFloat(document.getElementById('finance-amount-input').value);
+            const type = document.getElementById('finance-type-input').value;
+
+            if (name && amount > 0) {
+                const transaction = { name, amount, type };
+                transactions.push(transaction);
+                
+                if (type === 'income') {
+                    balance += amount;
+                } else {
+                    balance -= amount;
+                }
+                
+                updateFinanceDisplay();
+                
+                document.getElementById('finance-name-input').value = '';
+                document.getElementById('finance-amount-input').value = '';
+            }
+        }
+
+        function updateFinanceDisplay() {
+            document.getElementById('finance-balance').textContent = `€${balance.toFixed(2)}`;
+            document.getElementById('finance-balance').style.color = balance >= 0 ? '#2d6a4f' : '#e53e3e';
+            
+            const list = document.getElementById('finance-list');
+            list.innerHTML = '';
+            
+            transactions.forEach((t, index) => {
+                const div = document.createElement('div');
+                div.className = 'list-item';
+                div.innerHTML = `
+                    <strong>${t.name}</strong> - 
+                    <span style="color: ${t.type === 'income' ? '#2d6a4f' : '#e53e3e'};">
+                        ${t.type === 'income' ? '+' : '-'}€${t.amount.toFixed(2)}
+                    </span>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // Habit App Functions
+        let habits = [
+            { name: 'Drink 2 liter water', completed: false, streak: 0 },
+            { name: 'Lees 20 minuten', completed: false, streak: 0 }
+        ];
+
+        function addHabit() {
+            const input = document.getElementById('habit-name-input');
+            const name = input.value.trim();
+            
+            if (name) {
+                habits.push({ name, completed: false, streak: 0 });
+                renderHabits();
+                input.value = '';
+            }
+        }
+
+        function toggleHabit(index) {
+            const checkbox = event.target;
+            habits[index].completed = checkbox.checked;
+            
+            if (checkbox.checked) {
+                habits[index].streak++;
+            } else {
+                habits[index].streak = Math.max(0, habits[index].streak - 1);
+            }
+            
+            renderHabits();
+        }
+
+        function renderHabits() {
+            const list = document.getElementById('habit-list');
+            list.innerHTML = '';
+            
+            habits.forEach((habit, index) => {
+                const div = document.createElement('div');
+                div.className = 'list-item';
+                div.style.display = 'flex';
+                div.style.justifyContent = 'space-between';
+                div.style.alignItems = 'center';
+                div.innerHTML = `
+                    <span><strong>${habit.name}</strong> - Streak: ${habit.streak}</span>
+                    <input type="checkbox" ${habit.completed ? 'checked' : ''} onchange="toggleHabit(${index})" style="width: 20px; height: 20px;">
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        // Initialize habits on load
+        renderHabits();
+    </script>
 </body>
 </html>
